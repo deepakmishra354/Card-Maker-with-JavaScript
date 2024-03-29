@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+      }
+  
+      .main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+      }
+  
+      h3 {
+        margin-bottom: 20px;
+      }
+  
+      label {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+  
+      input[type="text"] {
+        padding: 8px;
+        margin-bottom: 10px;
+        width: 300px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+  
+      button {
+        padding: 8px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+  
+      button:hover {
+        background-color: #45a049;
+      }
+  
+      p {
+        margin-top: 20px;
+      }
+  
+      li {
+        list-style-type: none;
+        margin-bottom: 5px;
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+  
+      li button {
+        margin-left: 10px;
+        padding: 5px 10px;
+        background-color: #cd3328;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+  
+      li button:hover {
+        background-color: #e53935;
+      }
+      .divclass{
+         width: 200px;
+         margin-top: 20px; 
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  background-color: #e4c7e0;
+      }
+    </style>
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <h3 style="text-align: center">This is card content.</h3 >
+      <label for="item">Here you can creat a  card   :</label>
+       <input type="text" name="" id="x"  placeholder="Enter name"/>
+    <input type="text" name="" id="y"   placeholder="Enter age"/>
+         <input type="text" name="" id="z"   placeholder="Enter about self"/>
+      <button onclick="additem()">Add</button>
+      <div id="itemList"></div>
+   </div>
+  </body>
+  <script>
+   function additem(){
+    let x= document.getElementById("x");
+    let y= document.getElementById("y");
+    let z= document.getElementById("z");
+    let inp=x.value+y.value+z.value;
+    if(inp==""){
+      alert("Opps ! You Entered nothing  Please enter something........")
+    } 
+      else{
+     let itemList = document.getElementById("itemList");
+        let newdiv=document.createElement("div") ;
+         newdiv.className="divclass"
+         newdiv.innerHTML = "<strong>Name:</strong> " + x.value + "<br><strong>Age:</strong> " + y.value + "<br><strong>About:</strong> " + z.value;
+       itemList.appendChild(newdiv);
+      x.value = "";
+      y.value="";
+      z.value="";
+}}
+  </script>
+</html>
